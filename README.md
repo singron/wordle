@@ -12,3 +12,6 @@ of wordle for every possible answer and measuring statistics. This takes a few
 minutes. The current stats are:
 
     Words=2315 Max=5 Min=2 Avg=3.81 Win=100.00%
+
+You can also supply an answer word as an argument, and it will print out its
+sequence of guesses.
