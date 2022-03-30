@@ -6,7 +6,7 @@ use std::num::NonZeroU8;
 use rayon::prelude::*;
 
 /// A 5 letter word. Each byte is an ascii lowercase letter a-z.
-#[derive(Clone, Copy, PartialEq, Eq, PartialOrd, Ord)]
+#[derive(Clone, Copy, PartialEq, Eq, PartialOrd, Ord, Hash)]
 pub struct Word(pub [u8; 5]);
 
 /// A Word packed into a u64.

@@ -1,4 +1,5 @@
 #![feature(stdsimd)]
+use std::collections::HashSet;
 
 use wordle::*;
 
@@ -87,6 +88,16 @@ fn main() {
     let answer_words = read_wordlist("answer_words.txt");
     // These words can be guessed.
     let guess_words = read_wordlist("guess_words.txt");
+    let guess_words: Vec<Word> = {
+        let mut s = HashSet::new();
+        for &w in &guess_words {
+            s.insert(w);
+        }
+        for &w in &answer_words {
+            s.insert(w);
+        }
+        s.into_iter().collect()
+    };
 
     match word {
         None => {
